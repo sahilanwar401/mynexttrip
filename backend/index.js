@@ -9,11 +9,12 @@ import userRouter from "./routes/user.route.js"
 import listingRouter from "./routes/listing.route.js"
 import bookingRouter from "./routes/booking.route.js"
 const app = express()
+app.set("trust proxy", 1);
 
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-    origin: "npx plugins add vercel/vercel-plugin",
+    origin: "https://mynexttrip.vercel.app",
     credentials: true
 }))
 
