@@ -1,7 +1,8 @@
 import React, { createContext, useState } from 'react'
 export const authDataContext = createContext()
 function AuthContext ({children}) {
-    let serverUrl = "https://mynexttrip-backend.onrender.com"
+    let serverUrl = import.meta.env.DEV ? "http://localhost:5000" : ""
+    // let serverUrl = "https://mynexttrip-backend.onrender.com"
     let[loading,setLoading]=useState(false)
    let value={serverUrl,
     loading,setLoading
