@@ -122,7 +122,7 @@ const Nav = () => {
             {/* LIST YOUR HOME */}
             <span
                onClick={handleListYourHome}
-              {/* onClick={() => navigate("/listingPage1")} */}
+              
               className="hidden md:block text-sm font-medium px-4 py-3 rounded-full hover:bg-gray-100 cursor-pointer"
             >
               List your home
@@ -179,7 +179,7 @@ const Nav = () => {
                     
 
                  onClick={handleListYourHome}
-              {/* onClick={() => navigate("/listingPage1")} */}
+             
                     className="px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-100 cursor-pointer transition"
                   >
                     List your home
