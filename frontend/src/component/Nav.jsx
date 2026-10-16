@@ -205,7 +205,7 @@ const Nav = () => {
         </div>
         {/* ================= for search box================= */}
 
-        {searchData?.length > 0 && (
+       {Array.isArray(searchData) && searchData.length > 0 && (
           <div className="relative w-full flex justify-center">
             <div className="absolute top-2 w-full max-w-md bg-white border border-gray-200 rounded-2xl shadow-xl max-h-72 overflow-y-auto py-2 z-50">
               {searchData.map((search) => (
@@ -295,9 +295,7 @@ const Nav = () => {
 
           {/* POOL HOUSE */}
           <div
-            onClick={() => {
-              poolHouse;
-            }}
+            onClick={() => handleCategory("poolHouse")}
             className={`shrink-0 flex flex-col items-center justify-center gap-1 text-gray-600 hover:text-black hover:border-b-2 border-black cursor-pointer pb-2 transition ${
               cate == "poolHouse" ? "border-b" : ""
             }`}
