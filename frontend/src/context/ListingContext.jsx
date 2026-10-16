@@ -36,7 +36,7 @@ const ListingContext = ({ children }) => {
       if (backEndImage1) {
         formData.append("image1", backEndImage1);
       }
-      if (backEndImage1) {
+      if (backEndImage2) {
         formData.append("image2", backEndImage2);
       }
       if (backEndImage3) {
@@ -87,20 +87,18 @@ const ListingContext = ({ children }) => {
       console.log(error);
     }
   };
-   const handleSearch = async(data)=>{
-    try {
-      let result = await axios.get(serverUrl + `/api/listing/search/?query=${data}`)
-      setSearchData(result.data)
-      
-    } catch (error) {
-      setSearchData(null)
-      console.log(error);
-
-      
-      
-    }
-
-   }
+  const handleSearch = async (data) => {
+  try {
+    let result = await axios.get(serverUrl + "/api/listing/search", {
+      params: { query: data },
+      withCredentials: true,
+    });
+    setSearchData(Array.isArray(result.data) ? result.data : []);
+  } catch (error) {
+    setSearchData([]);
+    console.log(error);
+  }
+};
 
 
 
