@@ -51,6 +51,13 @@ const Nav = () => {
       console.log(error);
     }
   };
+   const handleListYourHome = () => {
+  if (userData) {
+    navigate("/listingPage1");
+  } else {
+    navigate("/login");
+  }
+};
 
   const handleCategory = (category) => {
     setCate(category);
@@ -114,7 +121,8 @@ const Nav = () => {
           <div className="relative flex items-center gap-2 sm:gap-4 shrink-0">
             {/* LIST YOUR HOME */}
             <span
-              onClick={() => navigate("/listingPage1")}
+               onClick={handleListYourHome}
+              {/* onClick={() => navigate("/listingPage1")} */}
               className="hidden md:block text-sm font-medium px-4 py-3 rounded-full hover:bg-gray-100 cursor-pointer"
             >
               List your home
@@ -167,7 +175,11 @@ const Nav = () => {
                   <div className="border-t border-gray-200 my-2"></div>
 
                   <li
-                    onClick={() => navigate("/listingPage1")}
+                    
+                    
+
+                 onClick={handleListYourHome}
+              {/* onClick={() => navigate("/listingPage1")} */}
                     className="px-4 py-3 rounded-xl text-gray-700 hover:bg-gray-100 cursor-pointer transition"
                   >
                     List your home
